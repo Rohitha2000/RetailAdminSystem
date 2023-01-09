@@ -1,0 +1,35 @@
+<p>
+    <mat-toolbar>
+      <span>Edit Category</span>
+    </mat-toolbar>
+  </p>
+  <div class="container">
+    <form (ngSubmit)= "updateCategory()" [formGroup]= "update_form">
+    <div class="row">
+        <div class="col-lg-6  col-md-4 col-sm-8 col-xs-8">
+          
+            <div class="mb-3">
+                <label  class="form-label">Category Name</label>
+                <input type="text" class="form-control" placeholder="" formControlName="category_name"
+                   [(ngModel)]= "fetched_data.category_name">
+              </div>
+              
+                
+              <div class="mb-3">
+                <label  class="form-label">Category Description</label><br>
+                <textarea formControlName="category_description"
+                   [(ngModel)]="fetched_data.category_description"></textarea>
+               
+              </div>
+            
+        </div>
+        <div class="col-lg-7"> </div>
+    </div>
+    <div class="actions">
+        <button mat-raised-button type="submit"
+         style="background-color: rgb(26 133 42); margin-right: 30px;">
+         SUBMIT</button>
+        <button mat-raised-button color="warn">RESET</button>
+    </div>
+  </form>
+  </div>

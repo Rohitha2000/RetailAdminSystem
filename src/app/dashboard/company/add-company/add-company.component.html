@@ -1,0 +1,59 @@
+
+
+  <!-- <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Add New Category</a>
+    </div>
+  </nav> -->
+  <p class="fixed-header">
+    <mat-toolbar>
+      <span>Add New Company</span>
+    </mat-toolbar>
+  </p>
+  <div class="container">
+    <form (ngSubmit)= "saveCompany()" [formGroup]= "company_form">
+    <div class="row">
+        <div class="col-lg-6  col-md-4 col-sm-8 col-xs-8">
+          
+            <div class="mb-3">
+                <label  class="form-label">Company Name</label>
+                <input type="text" class="form-control" placeholder="" formControlName="company_name">
+                <mat-error *ngIf= "!company_form.get('company_name').valid && 
+                company_form.get('company_name').touched">
+                 enter company name
+                </mat-error>
+                <mat-error *ngIf= "company_form.get('company_name').untouched && submitted">
+                  enter company name 
+                 </mat-error>
+                 
+                
+              </div>
+              
+                
+              <div class="mb-3">
+                <label  class="form-label">Company Description</label><br>
+                <textarea formControlName="company_description"></textarea><br>
+                <mat-error *ngIf= "!company_form.get('company_description').valid && 
+                company_form.get('company_description').touched">
+                 enter company description
+                </mat-error>
+                <mat-error *ngIf= "company_form.get('company_description').untouched && submitted">
+                  enter company description 
+                 </mat-error>
+               
+              </div>
+            
+        </div>
+        <div class="col-lg-7"> </div>
+    </div>
+    <div class="actions">
+        <button mat-raised-button type="submit"
+         style="background-color: rgb(26 133 42); margin-right: 30px;">
+         SUBMIT</button>
+        <button mat-raised-button color="warn">RESET</button>
+    </div>
+  </form>
+  </div>
+
+  
+ 

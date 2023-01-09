@@ -1,0 +1,96 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "category_name": "biscuit",
+      "category_description": "buscuit category123",
+      "category_id": "230"
+    },
+    {
+      "id": 3,
+      "category_name": "chocolate",
+      "category_description": "Dairy Category",
+      "category_id": "300"
+    },
+    {
+      "category_name": "chips",
+      "category_description": "cc",
+      "category_id": "694",
+      "id": 4
+    },
+    {
+      "category_name": "sdsdfff",
+      "category_description": "sdsd",
+      "category_id": "969",
+      "id": 5
+    },
+    {
+      "category_name": "rohi",
+      "category_description": "rtr",
+      "category_id": "647",
+      "id": 7
+    },
+    {
+      "category_name": "erere",
+      "category_description": "adsa",
+      "category_id": "964",
+      "id": 9
+    }
+  ],
+  "company": [
+    {
+      "id": 1,
+      "company_name": "Nestle",
+      "company_description": "Dairy Company",
+      "company_id": "C23"
+    },
+    {
+      "company_name": "cc",
+      "company_description": "sdsd",
+      "company_id": "464C",
+      "id": 3
+    },
+    {
+      "company_name": "vvbv",
+      "company_description": "vvbv",
+      "company_id": "C605",
+      "id": 4
+    },
+    {
+      "company_name": "Maggi",
+      "company_description": "noodles company",
+      "company_id": "C645",
+      "id": 5
+    }
+  ],
+  "product": [
+    {
+      "product_type": "chocolate",
+      "product_code": "M90003",
+      "product_name": "fivestar",
+      "product_totalstock": 23,
+      "company_name": "Nestle",
+      "product_costperitem": 10,
+      "product_manufacturedate": "2022-11-11",
+      "product_expirydate": "2023-04-26",
+      "product_description": "five star chocolate",
+      "id": 1
+    },
+    {
+      "product_type": "erere",
+      "product_code": "Q2323",
+      "product_name": "dasds",
+      "product_totalstock": 22,
+      "company_name": "cc",
+      "product_costperitem": 45,
+      "product_manufacturedate": "2022-10-07",
+      "product_expirydate": "2023-04-01",
+      "product_description": "bgdgdgd",
+      "id": 2
+    }
+  ],
+  "admin": {
+    "username": "rohitha",
+    "password": "abc123"
+  }
+}

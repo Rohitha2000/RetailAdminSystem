@@ -1,0 +1,62 @@
+mat-drawer{
+   background-color: rgb(0 0 0 / 87%);
+   
+}
+mat-drawer-content{
+   
+    background-color: #bec6d1;
+}
+
+mat-drawer h3{
+    background-color: rgb(32, 106, 43);
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    padding: 16px 20px;
+    width: 100%;
+
+}
+.bi-list-task{
+    color: rgb(24, 73, 31);
+
+}
+mat-drawer button{
+    flex-direction: column;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 20px 5px;
+    padding-left: 15px;
+    padding-right: 80px;
+    
+}
+mat-drawer button:hover, mat-drawer  button:active{
+    background-color:rgba(0, 0, 0, 0.479); 
+}
+.sidebut{
+    border: none;
+    background-color: #f5f5f5;
+}
+
+.person i{
+    font-size: 18px;
+}
+.person .bi-caret-down-fill{
+    font-size: 10px;
+    font-weight: 100;
+
+}
+.person{
+    font-weight: regular;
+    font-size: 12px;
+}
+
+.mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -7.5px;
+}
+
+
+  /* #bec6d1 */

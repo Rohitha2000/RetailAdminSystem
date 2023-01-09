@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "retailadmin-284a8": {
+      "hosting": {
+        "RetailStoreAdmin": [
+          "retailadmin-284a8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "retailadmin-284a8"
+  }
+}

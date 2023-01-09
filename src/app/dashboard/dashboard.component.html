@@ -1,0 +1,42 @@
+<mat-drawer-container class="example-container" style="height: 100vh;">
+    <mat-drawer mode="side" opened  #sidenav>
+        <h3> <i class="bi bi-bullseye"></i> Retail System</h3>
+        <button routerLink="product-report"><i class="bi bi-bar-chart-line-fill"></i> Product Report</button><br>
+        <button routerLink="add-product"><i class="bi bi-building-add"></i> Add Product</button><br>
+
+        <button routerLink="company-report"><i class="bi bi-bar-chart-line-fill"></i> Company Report</button><br>
+        <button routerLink="add-company"><i class="bi bi-building-add"></i> Add Company</button><br>
+
+        <button routerLink="category-report"><i class="bi bi-bar-chart-line-fill"></i> Category Report</button><br>
+        <button routerLink="add-category"><i class="bi bi-building-add"></i> Add Category</button><br>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <p>  <mat-toolbar>
+              <button class="sidebut" (click)= "sidenav.toggle()"><i class="bi bi-list-task"></i></button>
+
+              <span class="person"><i class="bi bi-person-fill"></i> Rohitha Gourabathuni &nbsp;&nbsp;
+                <i class="bi bi-caret-down-fill"></i></span>
+            </mat-toolbar>
+          </p>
+
+        <router-outlet></router-outlet>
+    
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<!-- <div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-6" style="background-color: bisque;">
+            dbdfbdbdfdhdgfdgfdfgfd
+            <a routerLink="add-category">add category</a><br>
+    <a routerLink="category-report">report</a>
+
+        </div>
+        <div class="col-lg-3" style="background-color: aqua; overflow:hidden">
+             <router-outlet></router-outlet>
+        </div>
+    </div>
+</div> -->
