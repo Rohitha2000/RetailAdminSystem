@@ -1,0 +1,71 @@
+<p>
+    <mat-toolbar>
+      <span> Order Report : {{paramid}}</span>
+    </mat-toolbar>
+  </p>
+
+  <div class="container">
+    <mat-error style="font-size: 18px; font-weight: bold;">
+        Order Details</mat-error>
+    <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
+    background-color: rgb(170, 169, 169);"></mat-divider>
+    <br>
+    <table >
+        <tr>
+            <th>Order ID</th>
+            <td>{{orderdata.order_id}}</td>
+            <th>Order Date</th>
+            <td>{{ orderdata.order_date | date : "dd MMM y h:mm a" }}</td>
+        </tr>
+        <tr>
+            <th>Customer Name</th>
+            <td>{{orderdata.customer_details.customer_name}}</td>
+            <th>Customer Mobile</th>
+            <td>{{orderdata.customer_details.customer_mobile}}</td>
+           
+        </tr>
+        <tr>
+            <th>Order Status</th>
+            <td>{{orderdata.order_status}}</td>
+            <th>Total Amount</th>
+            <td>{{orderdata.total_amount}}</td>
+        </tr>
+    </table><br><br>
+    <mat-error style="font-size: 18px; font-weight: bold;">
+        Order Items</mat-error>
+    <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
+    background-color: rgb(170, 169, 169);"></mat-divider>
+    <br>
+    <table class="table">
+        <thead>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Total Items</th>
+            <th>Cost Per Unit</th>
+            <th>Total Cost</th>
+        </thead>
+        <tbody >
+            <tr *ngFor= "let item of orderdata.orderitems">
+                <td>{{item.product_id}}</td>
+                <td>{{item.product_name}}</td>
+                <td>{{item.total_units}}</td>
+                <td>{{item.product_costperitem}}</td>
+                <td>{{item.total_cost}}</td>
+            </tr>
+            <tr >
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="color: red; text-align: end;font-size: 16px;"><strong>Total Amount: </strong></td>
+                <td style="font-size: 16px;"><strong>{{orderdata.total_amount}}</strong></td>
+
+            </tr>
+        </tbody>
+    </table><br>
+
+    <div class="action mb-8">
+        <button mat-raised-button color="warn">Print Receipt</button>
+    </div>
+
+
+  </div>

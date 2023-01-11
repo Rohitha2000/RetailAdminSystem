@@ -9,7 +9,7 @@ import { ProductService } from '../service/product.service';
 export class ProductReportComponent implements OnInit {
 
   dataSource: any;
-  displayedColumns: string[] = ['ID', 'Code', 'Name', 'Category', 'Cost', 'Actions'];
+  displayedColumns: string[] = ['ID', 'Code','Product', 'Company', 'Category', 'Cost', 'Total Stock', 'Actions'];
 
   constructor(private service:ProductService) { }
 

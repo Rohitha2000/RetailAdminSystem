@@ -3,7 +3,7 @@
     {
       "id": 1,
       "category_name": "biscuit",
-      "category_description": "buscuit category123",
+      "category_description": "biscuit category",
       "category_id": "230"
     },
     {
@@ -13,28 +13,28 @@
       "category_id": "300"
     },
     {
-      "category_name": "chips",
-      "category_description": "cc",
-      "category_id": "694",
+      "category_name": "Noodles",
+      "category_description": "noodles category",
+      "category_id": "817",
       "id": 4
     },
     {
-      "category_name": "sdsdfff",
-      "category_description": "sdsd",
-      "category_id": "969",
+      "category_name": "Chips",
+      "category_description": "potato chips",
+      "category_id": "642",
       "id": 5
     },
     {
-      "category_name": "rohi",
-      "category_description": "rtr",
-      "category_id": "647",
-      "id": 7
+      "category_name": "Namkeen",
+      "category_description": "Salty category",
+      "category_id": "659",
+      "id": 6
     },
     {
-      "category_name": "erere",
-      "category_description": "adsa",
-      "category_id": "964",
-      "id": 9
+      "category_name": "Cakes",
+      "category_description": "cakes",
+      "category_id": "682",
+      "id": 7
     }
   ],
   "company": [
@@ -45,22 +45,28 @@
       "company_id": "C23"
     },
     {
-      "company_name": "cc",
-      "company_description": "sdsd",
-      "company_id": "464C",
-      "id": 3
-    },
-    {
-      "company_name": "vvbv",
-      "company_description": "vvbv",
-      "company_id": "C605",
-      "id": 4
-    },
-    {
       "company_name": "Maggi",
       "company_description": "noodles company",
       "company_id": "C645",
       "id": 5
+    },
+    {
+      "company_name": "Lays",
+      "company_description": "snack food company",
+      "company_id": "C52",
+      "id": 6
+    },
+    {
+      "company_name": "Cadbury",
+      "company_description": "Dairy Company",
+      "company_id": "C373",
+      "id": 7
+    },
+    {
+      "company_name": "Britannia",
+      "company_description": "bakery company",
+      "company_id": "C150",
+      "id": 8
     }
   ],
   "product": [
@@ -77,16 +83,174 @@
       "id": 1
     },
     {
-      "product_type": "erere",
-      "product_code": "Q2323",
-      "product_name": "dasds",
-      "product_totalstock": 22,
-      "company_name": "cc",
-      "product_costperitem": 45,
-      "product_manufacturedate": "2022-10-07",
-      "product_expirydate": "2023-04-01",
-      "product_description": "bgdgdgd",
+      "product_type": "chocolate",
+      "product_code": "DM2342",
+      "product_name": "Dairy Milk",
+      "product_totalstock": 40,
+      "company_name": "Cadbury",
+      "product_costperitem": 20,
+      "product_manufacturedate": "2022-11-16",
+      "product_expirydate": "2023-05-05",
+      "product_description": "Dairy Milk Chocolate",
       "id": 2
+    },
+    {
+      "product_type": "Noodles",
+      "product_code": "MC34343",
+      "product_name": "Maggi Chicken",
+      "product_totalstock": 30,
+      "company_name": "Maggi",
+      "product_costperitem": 40,
+      "product_manufacturedate": "2022-08-18",
+      "product_expirydate": "2023-09-07",
+      "product_description": "chicken noodles",
+      "id": 3
+    },
+    {
+      "product_type": "Chips",
+      "product_code": "RL2323",
+      "product_name": "Red Lays",
+      "product_totalstock": 60,
+      "company_name": "Lays",
+      "product_costperitem": 20,
+      "product_manufacturedate": "2022-11-15",
+      "product_expirydate": "2023-09-09",
+      "product_description": "red tomato flavoured potato chips",
+      "id": 4
+    },
+    {
+      "product_type": "chocolate",
+      "product_code": "CF2342",
+      "product_name": "Fuse",
+      "product_totalstock": 80,
+      "company_name": "Cadbury",
+      "product_costperitem": 25,
+      "product_manufacturedate": "2022-10-20",
+      "product_expirydate": "2023-09-30",
+      "product_description": "fuse chocolate",
+      "id": 5
+    },
+    {
+      "product_type": "Cakes",
+      "product_code": "BC2324",
+      "product_name": "Strawberry Cake",
+      "product_totalstock": 120,
+      "company_name": "Britannia",
+      "product_costperitem": 15,
+      "product_manufacturedate": "2022-11-17",
+      "product_expirydate": "2023-03-31",
+      "product_description": "strawberry cakes",
+      "id": 6
+    }
+  ],
+  "order": [
+    {
+      "order_id": 531,
+      "order_date": "2023-01-11T07:59:05.405Z",
+      "customer_details": {
+        "customer_name": "dfbdb",
+        "customer_mobile": "64766476575676"
+      },
+      "orderitems": [
+        {
+          "product_id": 1,
+          "product_name": "fivestar",
+          "product_costperitem": 10,
+          "total_units": 23,
+          "total_cost": 230
+        },
+        {
+          "product_id": 3,
+          "product_name": "fuse",
+          "product_costperitem": 10,
+          "total_units": 11,
+          "total_cost": 110
+        }
+      ],
+      "total_amount": 340,
+      "id": 1,
+      "order_status": "paid"
+    },
+    {
+      "order_id": "761",
+      "order_date": "2023-01-11T09:10:15.202Z",
+      "customer_details": {
+        "customer_name": "rohitha",
+        "customer_mobile": "9876877999"
+      },
+      "orderitems": [
+        {
+          "product_id": 4,
+          "product_name": "scfs",
+          "product_costperitem": 3,
+          "total_units": 3,
+          "total_cost": 9
+        },
+        {
+          "product_id": 6,
+          "product_name": "rtrtsr",
+          "product_costperitem": 1,
+          "total_units": 5,
+          "total_cost": 5
+        }
+      ],
+      "total_amount": 14,
+      "id": 2,
+      "order_status": "paid"
+    },
+    {
+      "order_id": "75",
+      "order_date": "2023-01-11T11:06:00.419Z",
+      "customer_details": {
+        "customer_name": "rohitha",
+        "customer_mobile": "9898779097"
+      },
+      "orderitems": [
+        {
+          "product_id": 1,
+          "product_name": "fivestar",
+          "product_costperitem": 10,
+          "total_units": 8,
+          "total_cost": 80
+        },
+        {
+          "product_id": 2,
+          "product_name": "Dairy Milk",
+          "product_costperitem": 20,
+          "total_units": 5,
+          "total_cost": 100
+        }
+      ],
+      "total_amount": 180,
+      "order_status": "paid",
+      "id": 3
+    },
+    {
+      "order_id": "208",
+      "order_date": "2023-01-11T11:31:56.632Z",
+      "customer_details": {
+        "customer_name": "rohitha",
+        "customer_mobile": "9897609898"
+      },
+      "orderitems": [
+        {
+          "product_id": 4,
+          "product_name": "Red Lays",
+          "product_costperitem": 20,
+          "total_units": 4,
+          "total_cost": 80
+        },
+        {
+          "product_id": 3,
+          "product_name": "Maggi Chicken",
+          "product_costperitem": 40,
+          "total_units": 1,
+          "total_cost": 40
+        }
+      ],
+      "total_amount": 120,
+      "order_status": "paid",
+      "id": 4
     }
   ],
   "admin": {

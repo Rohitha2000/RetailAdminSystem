@@ -1,0 +1,139 @@
+
+<p>
+    <mat-toolbar>
+      <span>Start Sell</span>
+    </mat-toolbar>
+  </p>
+<div class="container" *ngIf="isCustomerdetails_notsaved">
+    <mat-error style="font-size: 18px; font-weight: bold;">
+        Enter Customer Details to start sells</mat-error>
+    <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
+    background-color: rgb(170, 169, 169);"></mat-divider>
+    <br>
+    <form [formGroup]="customer_form" (ngSubmit)="saveCustomer()">
+        <div class="row">
+
+            <div class="col-lg-5 col-md-4 col-sm-10">
+                <div class="mb-3">
+
+                    <input type="text" class="form-control form-control-sm shadow-none " placeholder=" Customer Name"
+                        formControlName="customer_name">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-4 col-sm-10">
+                <div class="mb-3">
+
+                    <input type="tel" class="form-control form-control-sm shadow-none" placeholder=" Customer Number"
+                        formControlName="customer_mobile">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-10">
+
+
+                <div class="mb-3">
+
+                    <button mat-raised-button color="primary" class="form-control form-control-sm" style="background-color: #3f51b5; color:white; 
+                outline: none !important; box-shadow: none;" type="submit">Start Sell</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container"  *ngIf="isCustomerdetails_notsaved== false">
+    <mat-error style="font-size: 18px; font-weight: bold;">
+        Customer Details and Order Details</mat-error>
+    <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
+    background-color: rgb(170, 169, 169);"></mat-divider>
+    <br>
+    <div class="customer">
+        <table style="width: 100%;">
+            <tr>
+                <th>Order ID</th>
+                <td>{{order.order_id}}</td>
+                <th>Order Date</th>
+                <td>{{ order.order_date | date : "dd MMM y h:mm a" }}</td>
+            </tr>
+            <tr style="margin-top: 5px;border-top: 1px solid white;">
+                <th>Customer Name</th>
+                <td>{{order.customer_details.customer_name}}</td>
+                <th>Customer Mobile</th>
+                <td>{{order.customer_details.customer_mobile}}</td>
+            </tr>
+        </table>
+    </div><br>
+    <mat-error style="font-size: 18px; font-weight: bold;">
+       Add Items to Cart</mat-error>
+    <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
+               background-color: rgb(170, 169, 169);"></mat-divider><br>
+          <form action="" [formGroup]="order_form" (ngSubmit)="saveOrderItem()">
+               <table class="additem">
+                <tr>
+                    <th>Select Product</th>
+                    <td>
+                        <div class="">
+                            
+                            <select class="form-select product form-select-sm " formControlName="product_name">
+                                
+                                <option [value]= "prod.product_name"  *ngFor= "let prod of products">{{prod.product_name}}</option>
+                              </select>
+                        </div>
+                    </td>
+                    <th>
+                        Enter Quantity
+                    </th>
+                    <td>
+                        <div class="">
+                            
+                            <input type="number" class="form-control form-select-sm" formControlName="quantity" placeholder="">
+                          </div>
+                    </td>
+                    <td>
+                        <button mat-raised-button color="warn" type="submit">Add Item</button>
+                    </td>
+                </tr>
+               </table>
+            </form><br>
+            <mat-error style="font-size: 18px; font-weight: bold;">
+                Order Item Details</mat-error>
+             <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
+                        background-color: rgb(170, 169, 169);"></mat-divider><br>
+                        <div class="div">
+                            <table style="width: 100%;">
+                              <thead style=" background-color: black; color: white;">
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Price Per Unit</th>
+                                <th>Total Units</th>
+                                <th>Total Cost</th>
+                                <th>Actions</th>
+                              
+                              </thead>
+                              <tbody >
+                                <tr *ngFor= "let order of ordered_items; let i = index">
+                                <td>{{order.product_id}}</td>
+                                <td>{{order.product_name}}</td>
+                                <td>{{order.product_costperitem}}</td>
+                                <td>{{order.total_units}}</td>
+                                <td>{{order.total_cost}}</td>
+                                <td><a (click)="deleteItem(i)"> <i class="fa fa-trash" style="font-size:24px; color: tomato;"></i></a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td  style="text-align: end;"><strong>Total Amount: </strong></td>
+                                <td><strong>{{totalAmount}}</strong> </td>
+                                
+                                <td></td>
+                            </tr>
+                            </tbody>
+                            </table>
+                          </div>
+                          <div class="action">
+                            <button mat-raised-button color="primary" (click)="saveOrder()">Save Sell</button>
+                        </div>
+
+</div>
+

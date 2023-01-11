@@ -31,6 +31,9 @@ import { AddCompanyComponent } from './dashboard/company/add-company/add-company
 import { CompanyReportComponent } from './dashboard/company/company-report/company-report.component';
 import { EditCompanyComponent } from './dashboard/company/edit-company/edit-company.component';
 import { EditProductComponent } from './dashboard/product/edit-product/edit-product.component';
+import { StartSellComponent } from './dashboard/order/start-sell/start-sell.component';
+import { OrderDetailsComponent } from './dashboard/order/order-details/order-details.component';
+import { OrderReportComponent } from './dashboard/order/order-report/order-report.component';
 
 
 @NgModule({
@@ -46,7 +49,10 @@ import { EditProductComponent } from './dashboard/product/edit-product/edit-prod
     AddCompanyComponent,
     CompanyReportComponent,
     EditCompanyComponent,
-    EditProductComponent
+    EditProductComponent,
+    StartSellComponent,
+    OrderDetailsComponent,
+    OrderReportComponent
     
   ],
   imports: [
