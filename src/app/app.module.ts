@@ -34,6 +34,7 @@ import { EditProductComponent } from './dashboard/product/edit-product/edit-prod
 import { StartSellComponent } from './dashboard/order/start-sell/start-sell.component';
 import { OrderDetailsComponent } from './dashboard/order/order-details/order-details.component';
 import { OrderReportComponent } from './dashboard/order/order-report/order-report.component';
+import {NgxPrintModule} from 'ngx-print';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { OrderReportComponent } from './dashboard/order/order-report/order-repor
     MatListModule,
     MatIconModule,
     MatTableModule,
+    NgxPrintModule,
     
     
     provideFirebaseApp(() => initializeApp(environment.firebase)),

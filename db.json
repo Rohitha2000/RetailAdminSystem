@@ -74,7 +74,7 @@
       "product_type": "chocolate",
       "product_code": "M90003",
       "product_name": "fivestar",
-      "product_totalstock": 23,
+      "product_totalstock": 14,
       "company_name": "Nestle",
       "product_costperitem": 10,
       "product_manufacturedate": "2022-11-11",
@@ -251,6 +251,106 @@
       "total_amount": 120,
       "order_status": "paid",
       "id": 4
+    },
+    {
+      "order_id": "403",
+      "order_date": "2023-01-18T08:56:56.228Z",
+      "customer_details": {
+        "customer_name": "fdgbdg",
+        "customer_mobile": "9898786655"
+      },
+      "orderitems": [
+        {
+          "product_id": 1,
+          "product_name": "fivestar",
+          "product_costperitem": 10,
+          "total_units": 3,
+          "total_cost": 30
+        }
+      ],
+      "total_amount": 30,
+      "order_status": "paid",
+      "id": 5
+    },
+    {
+      "order_id": "854",
+      "order_date": "2023-01-18T08:58:15.356Z",
+      "customer_details": {
+        "customer_name": "hfthfh",
+        "customer_mobile": "9787686756"
+      },
+      "orderitems": [
+        {
+          "product_id": 1,
+          "product_name": "fivestar",
+          "product_costperitem": 10,
+          "total_units": 3,
+          "total_cost": 30
+        }
+      ],
+      "total_amount": 30,
+      "order_status": "paid",
+      "id": 6
+    },
+    {
+      "order_id": "632",
+      "order_date": "2023-01-18T09:04:06.952Z",
+      "customer_details": {
+        "customer_name": "fthfhfthfht",
+        "customer_mobile": "9898989898"
+      },
+      "orderitems": [
+        {
+          "product_id": 2,
+          "product_name": "Dairy Milk",
+          "product_costperitem": 20,
+          "total_units": 2,
+          "total_cost": 40
+        }
+      ],
+      "total_amount": 40,
+      "order_status": "paid",
+      "id": 7
+    },
+    {
+      "order_id": "296",
+      "order_date": "2023-01-18T09:06:25.703Z",
+      "customer_details": {
+        "customer_name": "fnfhfhf",
+        "customer_mobile": "8787878787"
+      },
+      "orderitems": [
+        {
+          "product_id": 1,
+          "product_name": "fivestar",
+          "product_costperitem": 10,
+          "total_units": 3,
+          "total_cost": 30
+        }
+      ],
+      "total_amount": 30,
+      "order_status": "paid",
+      "id": 8
+    },
+    {
+      "order_id": "499",
+      "order_date": "2023-01-18T11:22:41.986Z",
+      "customer_details": {
+        "customer_name": "dfgdfgdfg",
+        "customer_mobile": "9789879797"
+      },
+      "orderitems": [
+        {
+          "product_id": 1,
+          "product_name": "fivestar",
+          "product_costperitem": 10,
+          "total_units": 6,
+          "total_cost": 60
+        }
+      ],
+      "total_amount": 60,
+      "order_status": "paid",
+      "id": 9
     }
   ],
   "admin": {

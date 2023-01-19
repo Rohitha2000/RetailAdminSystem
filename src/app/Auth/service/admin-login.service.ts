@@ -13,9 +13,11 @@ export class AdminLoginService {
   constructor(private http: HttpClient) { }
 
   AdminLoginCheck(){
-      return this.http.get('https://retailadmin-284a8-default-rtdb.firebaseio.com/Retail/Admin.json')
-      .pipe(map((res: any)=>{
-           return res;
-      }))
+      // return this.http.get('https://retailadmin-284a8-default-rtdb.firebaseio.com/Retail/Admin.json')
+      // .pipe(map((res: any)=>{
+      //      return res;
+      // }))
+
+      return this.http.get('http://localhost:3000/admin')
   }
 }

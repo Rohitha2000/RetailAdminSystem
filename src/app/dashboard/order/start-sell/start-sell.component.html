@@ -18,6 +18,10 @@
 
                     <input type="text" class="form-control form-control-sm shadow-none " placeholder=" Customer Name"
                         formControlName="customer_name">
+                        <mat-error *ngIf= "!customer_form.get('customer_name').valid && 
+                        customer_submitted">
+                 enter customer name
+                </mat-error>
                 </div>
             </div>
             <div class="col-lg-5 col-md-4 col-sm-10">
@@ -25,6 +29,10 @@
 
                     <input type="tel" class="form-control form-control-sm shadow-none" placeholder=" Customer Number"
                         formControlName="customer_mobile">
+                        <mat-error *ngIf= "!customer_form.get('customer_mobile').valid && 
+                        customer_submitted">
+                 enter customer mobile
+                </mat-error>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-10">
@@ -66,7 +74,7 @@
        Add Items to Cart</mat-error>
     <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
                background-color: rgb(170, 169, 169);"></mat-divider><br>
-          <form action="" [formGroup]="order_form" (ngSubmit)="saveOrderItem()">
+          <form action="" [formGroup]= "order_form" (ngSubmit)="saveOrderItem()">
                <table class="additem">
                 <tr>
                     <th>Select Product</th>
@@ -85,11 +93,14 @@
                     <td>
                         <div class="">
                             
-                            <input type="number" class="form-control form-select-sm" formControlName="quantity" placeholder="">
-                          </div>
+                            <input type="number" class="form-control form-select-sm" formControlName="quantity" #quant (focusout)= "lessQuantity(quant.value)">
+                            <mat-error *ngIf= " saveorderitem && lessquant">
+                       exceeding stock
+                    </mat-error>
+                        </div>
                     </td>
                     <td>
-                        <button mat-raised-button color="warn" type="submit">Add Item</button>
+                        <button mat-raised-button color="warn" type="submit" >Add Item</button>
                     </td>
                 </tr>
                </table>

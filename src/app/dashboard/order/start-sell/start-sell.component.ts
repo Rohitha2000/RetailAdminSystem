@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Product } from '../../product/product.model';
 import { ProductService } from '../../product/service/product.service';
@@ -25,23 +25,35 @@ export class StartSellComponent implements OnInit {
    totalAmount=0;
    uniqueid:boolean = false;
    allOrderdata:any[];
+   saveorderitem:boolean= false;
    
   customer_form= new FormGroup({
-    customer_name: new FormControl(null, Validators.required),
-    customer_mobile: new FormControl(null, Validators.required)
+    customer_name: new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z ]*$"), Validators.maxLength(25), Validators.minLength(3)]),
+    customer_mobile: new FormControl(null, [Validators.required,Validators.pattern("^[7-9][0-9]{9}$"),
+                                       Validators.minLength(10), Validators.maxLength(10)]),
   })
 
-  order_form= new FormGroup({
-    product_name:new FormControl(null, Validators.required),
-    quantity: new FormControl(null,Validators.required)
-  })
+  //order_form!: FormGroup;
 
-  constructor(private service: OrderService, private pd_service:ProductService, private router:Router) { }
-
+  constructor(private service: OrderService, private pd_service:ProductService,
+     private router:Router) { 
+     
+     }
+  ngOnChanges(){
+    this.getProducts();
+  }
   ngOnInit() {
     this.getProducts();
     this.getOrdersData();
+   // this.buildForm();
+   
   }
+ 
+  order_form= new FormGroup({
+    product_name:new FormControl(null, Validators.required),
+    quantity: new FormControl(null,[Validators.required])
+  })
+ 
   
   //this method is called after submitting customer details.
   saveCustomer(){
@@ -105,8 +117,42 @@ export class StartSellComponent implements OnInit {
     return -1;
   }
 
+ 
+
+  ngAfterViewInit(){
+    this.getProducts();
+  }
+  lessquant:boolean= false;
+  lessQuantity(quant){
+    
+      
+    //this.pd_service.getProducts().subscribe((res)=>{
+    //  this.products= res;
+      let prodt= null;
+      if(this.products != null){
+      for(let prod of this.products){
+          if(prod.product_name == this.order_form.value.product_name){
+           prodt= prod;
+          }
+      }
+      if( quant!= null && prodt.product_totalstock < quant){
+        this.lessquant= true;
+        return true;
+     }
+    
+    
+    }
+   
+  //  })
+  this.lessquant= false;
+    return false; 
+}
+
+
   saveOrderItem(){
-    if(this.order_form.invalid){
+   this.saveorderitem= true;
+    if(this.order_form.invalid || this.lessquant){
+
       return;
     }
     console.log(this.order_form.value);
@@ -119,8 +165,12 @@ export class StartSellComponent implements OnInit {
     if (this.no_of_orders > 0 && product_present==1) {
       for (let item of this.ordered_items) {
         if (this.order_form.value.product_name == item.product_name) {
+          if(this.lessQuantity(item.total_units + this.order_form.value.quantity)){
+            return;
+          };
           item.total_units = item.total_units + this.order_form.value.quantity;
           item.total_cost = item.total_units * item.product_costperitem;
+          
         }
 
         }
@@ -171,11 +221,24 @@ export class StartSellComponent implements OnInit {
 
   // start selling and go to order report 
 
+  updateStock(){
+    for(let ord of this.ordered_items){
+      for(let prod of this.products){
+        if(prod.product_name == ord.product_name){
+          prod.product_totalstock= prod.product_totalstock - ord.total_units;
+          this.pd_service.update(ord.product_id, prod).subscribe();
+        }
+      }
+    }
+
+    
+  }
+
   saveOrder(){
     if(this.ordered_items.length <= 0){
       return;
     }
-
+    this.updateStock();
     const order_obj={
       order_id: this.order.order_id,
       order_date: this.order.order_date,

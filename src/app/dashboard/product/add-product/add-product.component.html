@@ -12,26 +12,43 @@
             <div class="container1">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Select Product Type</label>
-                    <select class="form-select form-select-sm mb-3"  formControlName="product_type">
+                    <select class="form-select form-select-sm "  formControlName="product_type">
                         
                         <option *ngFor= "let category of product_category" [value]= "category">{{category}}</option>
+                       
                       </select>
+                      <mat-error *ngIf= "!product_form.get('product_type').valid && 
+                      submitted">
+                 Select Product Name
+                </mat-error>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Product Name</label>
                     <input type="text" class="form-control form-select-sm" formControlName="product_name" placeholder="">
+                    <mat-error *ngIf= "!product_form.get('product_name').valid && 
+                    submitted">
+               Enter Product Name
+              </mat-error>
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Select Company </label>
-                    <select class="form-select form-select-sm mb-3" formControlName="company_name">
+                    <select class="form-select form-select-sm" formControlName="company_name">
                         
                         <option [value]= "comp"  *ngFor= "let comp of companies">{{comp}}</option>
                       </select>
+                      <mat-error *ngIf= "!product_form.get('company_name').valid && 
+                    submitted">
+              Select Company Name
+              </mat-error>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Expiry Date</label>
                     <input type="date" class="form-control form-select-sm"
                     formControlName="product_expirydate" [min]= "expirydate">
+                    <mat-error *ngIf= "!product_form.get('product_expirydate').valid && 
+                    submitted">
+                  Enter Expiry date
+                </mat-error>
                   </div>
             </div>
         </div>
@@ -40,25 +57,45 @@
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Product Code</label>
                     <input type="text" class="form-control form-select-sm" formControlName="product_code" placeholder="">
+                    <mat-error *ngIf= "!product_form.get('product_code').valid && 
+                    submitted">
+                  Enter Product Code
+                </mat-error>
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Total Stock</label>
                     <input type="number" class="form-control form-select-sm" formControlName="product_totalstock" placeholder="">
+                    <mat-error *ngIf= "!product_form.get('product_totalstock').valid && 
+                    submitted">
+                  Enter Total Stock
+                </mat-error>
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Cost per Item</label>
                     <input type="number" class="form-control form-select-sm" formControlName="product_costperitem" placeholder="">
+                    <mat-error *ngIf= "!product_form.get('product_costperitem').valid && 
+                    submitted">
+                  Enter Cost
+                </mat-error>
                   </div>
                   <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Manufacture Date</label>
                     <input type="date" class="form-control form-select-sm" [max]= "today" formControlName="product_manufacturedate" placeholder="">
+                    <mat-error *ngIf= "!product_form.get('product_manufacturedate').valid && 
+                    submitted">
+                  Enter Manufacturer date
+                </mat-error>
                   </div>
             </div>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Product Description</label><br>
-            <textarea name="" id="" formControlName="product_description"></textarea>
-             </div>
+            <textarea name="" id="" formControlName="product_description"></textarea><br>
+            <mat-error *ngIf= "!product_form.get('product_description').valid && 
+            submitted">
+          Enter Product description
+        </mat-error>
+          </div>
              <button mat-raised-button class="submit" type="submit">SUBMIT</button>
             </div>
           </form>

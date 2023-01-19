@@ -19,7 +19,7 @@ import { ProductReportComponent } from './dashboard/product/product-report/produ
 const routes: Routes = [
   {path: '', component:AdminLoginComponent},
   {path:'dashboard', component: DashboardComponent
-  //,  canActivate:[AuthGuard]
+  ,  canActivate:[AuthGuard]
   ,
   children: [{path: 'add-category', component:AddCategoryComponent},
   {path:'category-report',component:CategoryReportComponent},
