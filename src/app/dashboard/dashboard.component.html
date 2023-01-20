@@ -27,8 +27,15 @@
         <p>  <mat-toolbar>
               <button class="sidebut" (click)= "sidenav.toggle()"><i class="bi bi-list-task"></i></button>
 
-              <span class="person"><i class="bi bi-person-fill"></i> Rohitha Gourabathuni &nbsp;&nbsp;
-                <i class="bi bi-caret-down-fill"></i></span>
+              <span class="person"><i class="bi bi-person-fill"></i> Rohitha Gourabathuni 
+                
+                <button mat-button [matMenuTriggerFor]= "menu" style="border-radius: 50%;
+                ">
+                    <i class="bi bi-caret-down-fill"></i></button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="logout()">Logout</button>
+                </mat-menu>
+            </span>
             </mat-toolbar>
           </p>
 

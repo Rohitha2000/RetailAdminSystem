@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLoginComponent } from './Auth/admin-login/admin-login.component';
 import { AuthGuard } from './Auth/Guard/auth.guard';
+import { RoleGuard } from './Auth/Guard/role.guard';
 import { AddCategoryComponent } from './dashboard/category/add-category/add-category.component';
 import { CategoryReportComponent } from './dashboard/category/category-report/category-report.component';
 import { EditCategoryComponent } from './dashboard/category/edit-category/edit-category.component';
@@ -19,24 +20,37 @@ import { ProductReportComponent } from './dashboard/product/product-report/produ
 const routes: Routes = [
   {path: '', component:AdminLoginComponent},
   {path:'dashboard', component: DashboardComponent
-  ,  canActivate:[AuthGuard]
   ,
-  children: [{path: 'add-category', component:AddCategoryComponent},
-  {path:'category-report',component:CategoryReportComponent},
-  {path:'category-report/:cid', component:EditCategoryComponent},
-
-  {path:'add-company', component:AddCompanyComponent},
-  {path:'company-report', component: CompanyReportComponent},
-  {path:'company-report/:cmpid', component:EditCompanyComponent},
+  children: [
+    {path: 'add-category', component:AddCategoryComponent,
+               canActivate: [RoleGuard], data: { role: ['admin'] }},
+  {path:'category-report',component:CategoryReportComponent,
+               canActivate: [RoleGuard], data: { role: ['admin'] }},
+  {path:'category-report/:cid', component:EditCategoryComponent,
+               canActivate: [RoleGuard], data: { role: ['admin'] }},
+              
+  {path:'add-company', component:AddCompanyComponent,
+              canActivate: [RoleGuard], data: { role: ['admin'] }},
+  {path:'company-report', component: CompanyReportComponent,
+              canActivate: [RoleGuard], data: { role: ['admin'] }},
+  {path:'company-report/:cmpid', component:EditCompanyComponent,
+               canActivate: [RoleGuard], data: { role: ['admin'] }},
   
-  {path:'add-product', component:AddProductComponent},
-  {path:'product-report', component:ProductReportComponent},
-  {path:'product-report/:pid', component:EditProductComponent},
+  {path:'add-product', component:AddProductComponent,
+               canActivate: [RoleGuard], data: { role: ['admin'] }},
+  {path:'product-report', component:ProductReportComponent,
+               canActivate: [RoleGuard], data: { role: ['admin'] }},
+  {path:'product-report/:pid', component:EditProductComponent,
+               canActivate: [RoleGuard], data: { role: ['admin'] }},
 
-  {path:'sell', component:StartSellComponent},
-  {path:'sell/order-details/:orderid', component:OrderDetailsComponent },
-  {path:'order-report', component:OrderReportComponent},
-  {path:'order-report/:orderid', component:OrderDetailsComponent}
+  {path:'sell', component:StartSellComponent,
+              canActivate: [RoleGuard], data: { role: ['admin', 'user'] }},
+  {path:'sell/order-details/:orderid', component:OrderDetailsComponent,
+              canActivate: [RoleGuard], data: { role: ['admin', 'user'] } },
+  {path:'order-report', component:OrderReportComponent,
+              canActivate: [RoleGuard], data: { role: ['admin', 'user'] }},
+  {path:'order-report/:orderid', component:OrderDetailsComponent,
+              canActivate: [RoleGuard], data: { role: ['admin', 'user'] }}
 
 ]}
   

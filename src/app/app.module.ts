@@ -22,7 +22,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { Firestore } from '@angular/fire/firestore';
 import {MatTableModule} from '@angular/material/table';
 import { EditCategoryComponent } from './dashboard/category/edit-category/edit-category.component';
 import { AddProductComponent } from './dashboard/product/add-product/add-product.component';
@@ -36,6 +35,7 @@ import { OrderDetailsComponent } from './dashboard/order/order-details/order-det
 import { OrderReportComponent } from './dashboard/order/order-report/order-report.component';
 import {NgxPrintModule} from 'ngx-print';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -75,6 +75,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTableModule,
     NgxPrintModule,
     MatTabsModule,
+    MatMenuModule,
     
     
     provideFirebaseApp(() => initializeApp(environment.firebase)),
