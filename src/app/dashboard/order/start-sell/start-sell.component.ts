@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminLoginService } from 'src/app/Auth/service/admin-login.service';
 import { Product } from '../../product/product.model';
 import { ProductService } from '../../product/service/product.service';
 import { Customer, OrderDetails } from '../order.model';
@@ -26,6 +27,8 @@ export class StartSellComponent implements OnInit {
    uniqueid:boolean = false;
    allOrderdata:any[];
    saveorderitem:boolean= false;
+   customer_button:string;
+   save_button:string;
    
   customer_form= new FormGroup({
     customer_name: new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z ]*$"), Validators.maxLength(25), Validators.minLength(3)]),
@@ -36,7 +39,7 @@ export class StartSellComponent implements OnInit {
   //order_form!: FormGroup;
 
   constructor(private service: OrderService, private pd_service:ProductService,
-     private router:Router) { 
+     private router:Router, private loginservice:  AdminLoginService) { 
      
      }
   ngOnChanges(){
@@ -45,6 +48,14 @@ export class StartSellComponent implements OnInit {
   ngOnInit() {
     this.getProducts();
     this.getOrdersData();
+    if(this.loginservice.setPersona== 'admin'){
+      this.customer_button= 'Start Sell'
+      this.save_button= 'Save Sell'
+    }
+    else if(this.loginservice.setPersona== 'user'){
+      this.customer_button= 'Start Buy'
+      this.save_button= 'Save Buy'
+    }
    // this.buildForm();
    
   }

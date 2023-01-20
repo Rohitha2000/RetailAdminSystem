@@ -1,32 +1,64 @@
 <div class="container" >
     <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 login" >
-              <h1 class="heading">RETAIL ADMIN MANAGEMENT SYSTEM</h1>
-            <form (ngSubmit)="adminlogin()" [formGroup]= "loginform">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">USERNAME</label>
-                    <input type="text" class="form-control" placeholder="" formControlName="username">
-                    <mat-error *ngIf= "!loginform.get('username').valid && 
-                    loginform.get('username').touched || loginform.get('username').untouched && submitted">enter username</mat-error>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">PASSWORD</label>
-                    <input type="password" class="form-control" placeholder="" formControlName="password">
-                    <mat-error *ngIf= "(!loginform.get('password').valid && 
-                    loginform.get('password').touched) || (loginform.get('password').untouched && submitted)">enter password</mat-error>
-                </div>
+              <h1 class="heading">RETAIL MANAGEMENT SYSTEM</h1>
+              <mat-tab-group animationDuration="0ms">
+                <mat-tab label="Admin">
+                    <form (ngSubmit)="adminlogin()" [formGroup]= "loginform">
+                        <br><br>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">USERNAME</label>
+                        <input type="text" class="form-control" placeholder="" formControlName="username">
+                        <mat-error *ngIf= "!loginform.get('username').valid && 
+                        loginform.get('username').touched || loginform.get('username').untouched && submitted">enter username</mat-error>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">PASSWORD</label>
+                        <input type="password" class="form-control" placeholder="" formControlName="password">
+                        <mat-error *ngIf= "(!loginform.get('password').valid && 
+                        loginform.get('password').touched) || (loginform.get('password').untouched && submitted)">enter password</mat-error>
+                    </div>
+    
+                    <div class="alert alert-danger" role="alert" *ngIf= "(notauthenticateduser && submitted)" 
+                    >
+                        <i class="bi bi-exclamation-triangle-fill"></i> Invalid Credentials
+                      </div>
+                   
+                    <div class="actions">
+                        <button mat-raised-button class="greenbtn" type="submit">SUBMIT</button>
+                        <button mat-raised-button   class="redbtn" color="warn" type="reset">RESET</button>
+                    </div>
+                   
+                </form></mat-tab>
+                <mat-tab label="User"><form (ngSubmit)="userlogin()" [formGroup]= "loginform">
 
-                <div class="alert alert-danger" role="alert" *ngIf= "(notauthenticateduser && submitted)" 
-                >
-                    <i class="bi bi-exclamation-triangle-fill"></i> Invalid Credentials
-                  </div>
-               
-                <div class="actions">
-                    <button mat-raised-button class="greenbtn" type="submit">SUBMIT</button>
-                    <button mat-raised-button   class="redbtn" color="warn" type="reset">RESET</button>
-                </div>
-               
-            </form>
+                    <br><br>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">USERNAME</label>
+                        <input type="text" class="form-control" placeholder="" formControlName="username">
+                        <mat-error *ngIf= "!loginform.get('username').valid && 
+                        loginform.get('username').touched || loginform.get('username').untouched && submitted">enter username</mat-error>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">PASSWORD</label>
+                        <input type="password" class="form-control" placeholder="" formControlName="password">
+                        <mat-error *ngIf= "(!loginform.get('password').valid && 
+                        loginform.get('password').touched) || (loginform.get('password').untouched && submitted)">enter password</mat-error>
+                    </div>
+    
+                    <div class="alert alert-danger" role="alert" *ngIf= "(notauthenticateduser && submitted)" 
+                    >
+                        <i class="bi bi-exclamation-triangle-fill"></i> Invalid Credentials
+                      </div>
+                   
+                    <div class="actions">
+                        <button mat-raised-button class="greenbtn" type="submit">SUBMIT</button>
+                        <button mat-raised-button   class="redbtn" color="warn" type="reset">RESET</button>
+                    </div>
+                   
+                </form></mat-tab>
+              </mat-tab-group>
+            
         </div>
         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-6 image">
              <!-- <img src="./assets/grocerybg.jpg" alt="" > -->

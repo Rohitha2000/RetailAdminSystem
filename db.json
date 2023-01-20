@@ -356,5 +356,11 @@
   "admin": {
     "username": "rohitha",
     "password": "abc123"
-  }
+  },
+  "user":[
+    {
+      "username": "rohi",
+      "password": "abcde"
+    }
+  ]
 }

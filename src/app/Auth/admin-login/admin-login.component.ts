@@ -18,6 +18,7 @@ export interface Admin {
 
 export class AdminLoginComponent implements OnInit {
   admindetails: Admin;
+  userDetails: Admin[];
   notauthenticateduser: boolean = false;
   submitted: boolean = false;
   constructor(private loginservice: AdminLoginService, private router: Router) { }
@@ -42,7 +43,9 @@ export class AdminLoginComponent implements OnInit {
       if ((this.loginform.value.username == this.admindetails.username) &&
         (this.loginform.value.password == this.admindetails.password)) {
         this.notauthenticateduser = false;
+        this.loginservice.setPersona= "admin";
          this.loginservice.isLoggedIn= true;
+         console.log("persona ::: "+this.loginservice.setPersona);
         this.router.navigate(['dashboard'])
       }
       else {
@@ -50,9 +53,35 @@ export class AdminLoginComponent implements OnInit {
       }
     })
 
-    
+  }
 
+  userlogin() {
+    this.submitted= true;
+    if(!this.loginform.valid){
+      return;
+    }
+
+
+    this.loginservice.userLoginCheck().subscribe((response) => {
+      this.userDetails = response as Admin[];
+      for(let user of this.userDetails){
+      if ((this.loginform.value.username == user.username) &&
+        (this.loginform.value.password == user.password)) {
+        this.notauthenticateduser = false;
+        this.loginservice.setPersona= "user";
+         this.loginservice.isLoggedIn= true;
+         console.log("user successfull")
+         console.log("persona ::: "+this.loginservice.setPersona);
+        this.router.navigate(['dashboard'])
+      }
+    }
+      
+        
+      
+    })
 
   }
+
+
 
 }
