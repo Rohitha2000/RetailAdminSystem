@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import jsPDF from 'jspdf';
 import { CategoryService } from '../service/category.service';
 import autoTable from 'jspdf-autotable'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-category-report',
@@ -28,7 +29,7 @@ export class CategoryReportComponent implements OnInit {
  }
   
 
-  constructor(private service: CategoryService) { }
+  constructor(private service: CategoryService, private http: HttpClient) { }
 
   ngOnInit(){
     this.fetchdata();
@@ -50,9 +51,17 @@ export class CategoryReportComponent implements OnInit {
 
 
   fetchdata(){
-    this.service.getCategory().subscribe((res)=>{
-        this.dataSource= res ;
-    })
+
+     const promise= this.http.get('http://localhost:3000/category').toPromise();
+     promise.then((data)=>{
+      this.dataSource= (data)
+      console.log(JSON.stringify(data))
+     }).catch((error)=>{
+      console.log("error occured"+ error)
+     })
+    // this.service.getCategory().subscribe((res)=>{
+    //     this.dataSource= res ;
+    // })
   }
 
   

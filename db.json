@@ -98,7 +98,7 @@
       "product_type": "Noodles",
       "product_code": "MC34343",
       "product_name": "Maggi Chicken",
-      "product_totalstock": 30,
+      "product_totalstock": 25,
       "company_name": "Maggi",
       "product_costperitem": 40,
       "product_manufacturedate": "2022-08-18",
@@ -110,7 +110,7 @@
       "product_type": "Chips",
       "product_code": "RL2323",
       "product_name": "Red Lays",
-      "product_totalstock": 60,
+      "product_totalstock": 58,
       "company_name": "Lays",
       "product_costperitem": 20,
       "product_manufacturedate": "2022-11-15",
@@ -122,7 +122,7 @@
       "product_type": "chocolate",
       "product_code": "CF2342",
       "product_name": "Fuse",
-      "product_totalstock": 80,
+      "product_totalstock": 100,
       "company_name": "Cadbury",
       "product_costperitem": 25,
       "product_manufacturedate": "2022-10-20",
@@ -134,7 +134,7 @@
       "product_type": "Cakes",
       "product_code": "BC2324",
       "product_name": "Strawberry Cake",
-      "product_totalstock": 120,
+      "product_totalstock": 119,
       "company_name": "Britannia",
       "product_costperitem": 15,
       "product_manufacturedate": "2022-11-17",
@@ -351,13 +351,60 @@
       "total_amount": 60,
       "order_status": "paid",
       "id": 9
+    },
+    {
+      "order_id": "90",
+      "order_date": "2023-02-01T05:34:50.058Z",
+      "customer_details": {
+        "customer_name": "avan",
+        "customer_mobile": "7866880088"
+      },
+      "orderitems": [
+        {
+          "product_id": 3,
+          "product_name": "Maggi Chicken",
+          "product_costperitem": 40,
+          "total_units": 5,
+          "total_cost": 200
+        }
+      ],
+      "total_amount": 200,
+      "order_status": "paid",
+      "id": 10
+    },
+    {
+      "order_id": "390",
+      "order_date": "2023-02-01T05:50:37.719Z",
+      "customer_details": {
+        "customer_name": "Shila",
+        "customer_mobile": "8988809021"
+      },
+      "orderitems": [
+        {
+          "product_id": 4,
+          "product_name": "Red Lays",
+          "product_costperitem": 20,
+          "total_units": 2,
+          "total_cost": 40
+        },
+        {
+          "product_id": 6,
+          "product_name": "Strawberry Cake",
+          "product_costperitem": 15,
+          "total_units": 1,
+          "total_cost": 15
+        }
+      ],
+      "total_amount": 55,
+      "order_status": "paid",
+      "id": 11
     }
   ],
   "admin": {
     "username": "rohitha",
     "password": "abc123"
   },
-  "user":[
+  "user": [
     {
       "username": "rohi",
       "password": "abcde"

@@ -1,12 +1,12 @@
 
 <p>
     <mat-toolbar>
-      <span>Start Sell</span>
+      <span>{{customer_button}}</span>
     </mat-toolbar>
   </p>
 <div class="container" *ngIf="isCustomerdetails_notsaved">
     <mat-error style="font-size: 18px; font-weight: bold;">
-        Enter Customer Details to start sells</mat-error>
+        Enter Customer Details to {{customer_button |lowercase}}</mat-error>
     <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
     background-color: rgb(170, 169, 169);"></mat-divider>
     <br>
