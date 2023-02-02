@@ -1,5 +1,4 @@
 export class Product{
-    product_id:string;
     product_code:string;
     product_type:string;
     product_name: string;

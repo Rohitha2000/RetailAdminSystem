@@ -86,7 +86,7 @@
       "product_type": "chocolate",
       "product_code": "DM2342",
       "product_name": "Dairy Milk",
-      "product_totalstock": 40,
+      "product_totalstock": 38,
       "company_name": "Cadbury",
       "product_costperitem": 20,
       "product_manufacturedate": "2022-11-16",
@@ -398,6 +398,26 @@
       "total_amount": 55,
       "order_status": "paid",
       "id": 11
+    },
+    {
+      "order_id": "319",
+      "order_date": "2023-02-02T16:52:00.166Z",
+      "customer_details": {
+        "customer_name": "dfvsdfsf",
+        "customer_mobile": "9090878899"
+      },
+      "orderitems": [
+        {
+          "product_id": 2,
+          "product_name": "Dairy Milk",
+          "product_costperitem": 20,
+          "total_units": 2,
+          "total_cost": 40
+        }
+      ],
+      "total_amount": 40,
+      "order_status": "paid",
+      "id": 12
     }
   ],
   "admin": {

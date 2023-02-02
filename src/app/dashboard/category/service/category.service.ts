@@ -12,7 +12,7 @@ export class CategoryService {
   addCategory(category: Category) {
 
     return this.http.post('http://localhost:3000/category', category)
-      .pipe(map((data: Category) => {
+      .pipe(map((data: any) => {
         return data;
       }))
 

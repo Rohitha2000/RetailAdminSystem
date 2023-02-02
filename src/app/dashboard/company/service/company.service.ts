@@ -12,7 +12,7 @@ export class CompanyService {
   addCompany(company: Company) {
 
     return this.http.post('http://localhost:3000/company', company)
-      .pipe(map((data: Company) => {
+      .pipe(map((data: any) => {
         return data;
       }))
 
