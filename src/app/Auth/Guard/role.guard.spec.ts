@@ -33,29 +33,7 @@ describe('RoleGuard', () => {
     service.setPersona= 'admin';
     let act:any= { data: { role: ['admin', 'user'] } };
     
-    //= route.snapshot;
-
-    // act.data={
-    //   role: ['admin', 'user']
-    // }
-    // let routeMockAdmin: ActivatedRouteSnapshot = {
-    //   params: {},
-    //   data: { role: ['admin'] },
-    //   url: [],
-    //   queryParams: {},
-    //   fragment: '',
-    //   outlet: '',
-    //   component: undefined,
-    //   routeConfig: undefined,
-    //   title: '',
-    //   root: new ActivatedRouteSnapshot,
-    //   parent: new ActivatedRouteSnapshot,
-    //   firstChild: new ActivatedRouteSnapshot,
-    //   children: [],
-    //   pathFromRoot: [],
-    //   paramMap: undefined,
-    //   queryParamMap: undefined
-    // };
+    
     
     expect(guard.canActivate(act)).toBeTruthy();
   });
