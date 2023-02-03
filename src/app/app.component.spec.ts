@@ -1,35 +1,47 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AdminLoginService } from './Auth/service/admin-login.service';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+  let component: AppComponent;
+  let spyservice={
+    setLoggedIn: jasmine.createSpy('setLoggedIn'),
+    setPersona: jasmine.createSpy('setPersona')
+  }
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
+      declarations: [ AppComponent ],
+      providers: [ {provide: AdminLoginService, useValue: spyservice} ]
     }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+ 
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should set isLoggedIn to true when token is present in localStorage - Admin', () => {
+   
+    
+    localStorage.setItem('token', 'Ad89191034');
+    component.ngOnInit();
+    expect(component.isLoggedIn).toBe(true);
+    expect(spyservice.setLoggedIn).toHaveBeenCalledWith(true);
+    expect(spyservice.setPersona).toEqual('admin');
   });
 
-  it(`should have as title 'RetailStoreAdmin'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('RetailStoreAdmin');
-  });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('RetailStoreAdmin app is running!');
+  it('should set isLoggedIn to true when token is present in localStorage - User', () => {
+    localStorage.setItem('token', 'Ud2434545');
+    component.ngOnInit();
+    expect(component.isLoggedIn).toBe(true);
+    expect(spyservice.setLoggedIn).toHaveBeenCalledWith(true);
+    expect(spyservice.setPersona).toEqual('user');
+   
   });
+  
 });

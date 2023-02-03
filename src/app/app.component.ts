@@ -13,6 +13,7 @@ export class AppComponent {
   constructor(private authService: AdminLoginService) { }
 
   ngOnInit() {
+    
     const token = localStorage.getItem('token');
     if (token) {
       this.isLoggedIn = true;

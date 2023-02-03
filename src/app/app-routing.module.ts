@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLoginComponent } from './Auth/admin-login/admin-login.component';
-import { AuthGuard } from './Auth/Guard/auth.guard';
 import { RoleGuard } from './Auth/Guard/role.guard';
 import { AddCategoryComponent } from './dashboard/category/add-category/add-category.component';
 import { CategoryReportComponent } from './dashboard/category/category-report/category-report.component';

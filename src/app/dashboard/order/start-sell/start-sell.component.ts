@@ -260,8 +260,8 @@ export class StartSellComponent implements OnInit {
     }
 
     this.service.addOrder(order_obj).subscribe((res)=>{
-      console.log("Data addded "+ res);
-      this.router.navigate(["dashboard/sell/order-details", this.order.order_id])
+        this.router.navigate(["dashboard/sell/order-details", this.order.order_id])
+      
     })
 
   }

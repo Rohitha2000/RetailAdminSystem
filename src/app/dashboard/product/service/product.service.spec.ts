@@ -107,10 +107,10 @@ describe('ProductService', () => {
   
     const req = httpMock.expectOne((request: HttpRequest<any>) => {
       return request.method === 'PUT'
-        && request.url === `http://localhost:3000/company/${id}`
+        && request.url === `http://localhost:3000/product/${id}`
         && request.body === prod;
     });
   
-    req.flush({});
+  req.flush({});
   });
 });
