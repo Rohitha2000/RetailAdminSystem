@@ -15,18 +15,18 @@ export class CategoryReportComponent implements OnInit {
   displayedColumns: string[] = ['ID', 'Name', 'Description', 'Actions'];
   
 
- @ViewChild('report', {static:false}) el:ElementRef;
+//  @ViewChild('report', {static:false}) el:ElementRef;
 
- makepdf(){
-  let pdf= new jsPDF('p', 'pt');
-  pdf.html(this.el.nativeElement,{
-    callback:(pdf)=>{
-      pdf.save("category-report.pdf")
-    }
-  })
+//  makepdf(){
+//   let pdf= new jsPDF('p', 'pt');
+//   pdf.html(this.el.nativeElement,{
+//     callback:(pdf)=>{
+//       pdf.save("category-report.pdf")
+//     }
+//   })
 
  
- }
+//  }
   
 
   constructor(private service: CategoryService, private http: HttpClient) { }
@@ -52,16 +52,13 @@ export class CategoryReportComponent implements OnInit {
 
   fetchdata(){
 
-     const promise= this.http.get('http://localhost:3000/category').toPromise();
+     const promise= this.http.get<any>('http://localhost:3000/category').toPromise();
      promise.then((data)=>{
       this.dataSource= (data)
       console.log(JSON.stringify(data))
      }).catch((error)=>{
       console.log("error occured"+ error)
      })
-    // this.service.getCategory().subscribe((res)=>{
-    //     this.dataSource= res ;
-    // })
   }
 
   

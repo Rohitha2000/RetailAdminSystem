@@ -9,7 +9,7 @@ export class RoleGuard implements CanActivate {
   constructor(private authService: AdminLoginService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot | any): boolean {
-    debugger;
+    
     const expectedRole = route?.data["role"] as Array<string>;
     for(let roles of expectedRole){
       const userRole = this.authService.setPersona;

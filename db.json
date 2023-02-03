@@ -74,7 +74,7 @@
       "product_type": "chocolate",
       "product_code": "M90003",
       "product_name": "fivestar",
-      "product_totalstock": 14,
+      "product_totalstock": 0,
       "company_name": "Nestle",
       "product_costperitem": 10,
       "product_manufacturedate": "2022-11-11",
@@ -86,7 +86,7 @@
       "product_type": "chocolate",
       "product_code": "DM2342",
       "product_name": "Dairy Milk",
-      "product_totalstock": 38,
+      "product_totalstock": 36,
       "company_name": "Cadbury",
       "product_costperitem": 20,
       "product_manufacturedate": "2022-11-16",
@@ -98,7 +98,7 @@
       "product_type": "Noodles",
       "product_code": "MC34343",
       "product_name": "Maggi Chicken",
-      "product_totalstock": 25,
+      "product_totalstock": 14,
       "company_name": "Maggi",
       "product_costperitem": 40,
       "product_manufacturedate": "2022-08-18",
@@ -110,7 +110,7 @@
       "product_type": "Chips",
       "product_code": "RL2323",
       "product_name": "Red Lays",
-      "product_totalstock": 58,
+      "product_totalstock": 57,
       "company_name": "Lays",
       "product_costperitem": 20,
       "product_manufacturedate": "2022-11-15",
@@ -122,7 +122,7 @@
       "product_type": "chocolate",
       "product_code": "CF2342",
       "product_name": "Fuse",
-      "product_totalstock": 100,
+      "product_totalstock": 98,
       "company_name": "Cadbury",
       "product_costperitem": 25,
       "product_manufacturedate": "2022-10-20",
@@ -134,7 +134,7 @@
       "product_type": "Cakes",
       "product_code": "BC2324",
       "product_name": "Strawberry Cake",
-      "product_totalstock": 119,
+      "product_totalstock": 117,
       "company_name": "Britannia",
       "product_costperitem": 15,
       "product_manufacturedate": "2022-11-17",
@@ -418,6 +418,140 @@
       "total_amount": 40,
       "order_status": "paid",
       "id": 12
+    },
+    {
+      "order_id": "580",
+      "order_date": "2023-02-03T06:10:38.445Z",
+      "customer_details": {
+        "customer_name": "fgfghfh",
+        "customer_mobile": "8989787878"
+      },
+      "orderitems": [
+        {
+          "product_id": 1,
+          "product_name": "fivestar",
+          "product_costperitem": 10,
+          "total_units": 14,
+          "total_cost": 140
+        }
+      ],
+      "total_amount": 140,
+      "order_status": "paid",
+      "id": 13
+    },
+    {
+      "order_id": "69",
+      "order_date": "2023-02-03T06:16:57.146Z",
+      "customer_details": {
+        "customer_name": "thfghjfyhythrh",
+        "customer_mobile": "8978997899"
+      },
+      "orderitems": [
+        {
+          "product_id": 2,
+          "product_name": "Dairy Milk",
+          "product_costperitem": 20,
+          "total_units": 2,
+          "total_cost": 40
+        }
+      ],
+      "total_amount": 40,
+      "order_status": "paid",
+      "id": 14
+    },
+    {
+      "order_id": "555",
+      "order_date": "2023-02-03T06:18:56.482Z",
+      "customer_details": {
+        "customer_name": "ghfghf",
+        "customer_mobile": "8787787878"
+      },
+      "orderitems": [
+        {
+          "product_id": 3,
+          "product_name": "Maggi Chicken",
+          "product_costperitem": 40,
+          "total_units": 3,
+          "total_cost": 120
+        }
+      ],
+      "total_amount": 120,
+      "order_status": "paid",
+      "id": 15
+    },
+    {
+      "order_id": "153",
+      "order_date": "2023-02-03T06:19:56.390Z",
+      "customer_details": {
+        "customer_name": "gfhfhfg",
+        "customer_mobile": "8797897898"
+      },
+      "orderitems": [
+        {
+          "product_id": 3,
+          "product_name": "Maggi Chicken",
+          "product_costperitem": 40,
+          "total_units": 5,
+          "total_cost": 200
+        }
+      ],
+      "total_amount": 200,
+      "order_status": "paid",
+      "id": 16
+    },
+    {
+      "order_id": "424",
+      "order_date": "2023-02-03T06:23:47.178Z",
+      "customer_details": {
+        "customer_name": "hbrtrthrh",
+        "customer_mobile": "7878787878"
+      },
+      "orderitems": [
+        {
+          "product_id": 3,
+          "product_name": "Maggi Chicken",
+          "product_costperitem": 40,
+          "total_units": 3,
+          "total_cost": 120
+        }
+      ],
+      "total_amount": 120,
+      "order_status": "paid",
+      "id": 17
+    },
+    {
+      "order_id": "609",
+      "order_date": "2023-02-03T06:24:23.308Z",
+      "customer_details": {
+        "customer_name": "rtgrgrtgrgtr",
+        "customer_mobile": "7878787878"
+      },
+      "orderitems": [
+        {
+          "product_id": 6,
+          "product_name": "Strawberry Cake",
+          "product_costperitem": 15,
+          "total_units": 2,
+          "total_cost": 30
+        },
+        {
+          "product_id": 5,
+          "product_name": "Fuse",
+          "product_costperitem": 25,
+          "total_units": 2,
+          "total_cost": 50
+        },
+        {
+          "product_id": 4,
+          "product_name": "Red Lays",
+          "product_costperitem": 20,
+          "total_units": 1,
+          "total_cost": 20
+        }
+      ],
+      "total_amount": 100,
+      "order_status": "paid",
+      "id": 18
     }
   ],
   "admin": {
