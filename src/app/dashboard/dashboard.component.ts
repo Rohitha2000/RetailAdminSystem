@@ -13,6 +13,14 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router, private loginservice: AdminLoginService) { }
 
   ngOnInit(): void {
+   this.logincheck()
+  }
+  
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/'])
+  }
+  logincheck(){
     this.persona= this.loginservice.setPersona;
     if(this.persona == 'admin'){
       this.startSellorBuy_dashboard= 'Start Sell'
@@ -20,11 +28,6 @@ export class DashboardComponent implements OnInit {
     else if( this.persona == 'user'){
       this.startSellorBuy_dashboard= 'Start Buy'
     }
-  }
-  
-  logout(){
-    localStorage.clear();
-    this.router.navigate(['/'])
   }
  
 
