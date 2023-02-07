@@ -23,7 +23,7 @@ export class AddCategoryComponent implements OnInit {
     this.getCategories();
   }
 
-  category_form = new FormGroup({
+  category_form:FormGroup|any = new FormGroup({
     category_name: new FormControl('', Validators.required),
     category_description: new FormControl('', Validators.required)
   })
@@ -73,7 +73,6 @@ export class AddCategoryComponent implements OnInit {
 
   getCategories(){
     this.service.getCategory().subscribe(res => {
-      console.log("raw data" + JSON.stringify(res));
       this.categorydata = (res) as Category[];
     })
   }
