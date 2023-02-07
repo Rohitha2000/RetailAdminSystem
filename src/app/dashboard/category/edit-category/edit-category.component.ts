@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Category } from '../category.model';
 import { CategoryService } from '../service/category.service';
@@ -14,20 +14,20 @@ import { Location } from '@angular/common';
 export class EditCategoryComponent implements OnInit {
   fetched_data:any;
   id:string;
-
+update_form!:FormGroup;
   constructor(private service: CategoryService, private route: ActivatedRoute, 
-    private router:Router ) { }
+    private router:Router, private fb: FormBuilder ) { }
 
-  update_form: FormGroup | any = new FormGroup({
-    category_name: new FormControl('', Validators.required),
-    category_description: new FormControl('', Validators.required)
-  })
+  
 
   
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('cid');
-    console.log("asdda", this.id)
+    this.update_form=this.fb.group({
+      category_name: new FormControl('', Validators.required),
+      category_description: new FormControl('', Validators.required)
+    })
     this.fetchCategory();
   }
 
