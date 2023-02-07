@@ -16,9 +16,9 @@ export class EditCategoryComponent implements OnInit {
   id:string;
 
   constructor(private service: CategoryService, private route: ActivatedRoute, 
-    private router:Router ,private loc: Location) { }
+    private router:Router ) { }
 
-  update_form = new FormGroup({
+  update_form: FormGroup | any = new FormGroup({
     category_name: new FormControl('', Validators.required),
     category_description: new FormControl('', Validators.required)
   })
@@ -50,8 +50,8 @@ export class EditCategoryComponent implements OnInit {
     }
 
     this.service.update(this.fetched_data.id, this.fetched_data).subscribe((res)=>{
-      console.log(JSON.stringify(res));
-      this.loc.back();
+      
+      this.router.navigate(['/dashboard'])
     })
   }
 
