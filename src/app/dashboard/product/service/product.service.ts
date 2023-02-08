@@ -10,7 +10,7 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
   
-  addProduct(product:Product){
+  addProduct(product:any){
     return this.http.post('http://localhost:3000/product', product)
       .pipe(map((data) => {
         return data;

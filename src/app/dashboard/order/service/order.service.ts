@@ -9,8 +9,8 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  getOrders(): Observable<any> {
-    return this.http.get('http://localhost:3000/order')
+  getOrders(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3000/order')
 
   }
 

@@ -86,7 +86,7 @@
       "product_type": "chocolate",
       "product_code": "DM2342",
       "product_name": "Dairy Milk",
-      "product_totalstock": 36,
+      "product_totalstock": 34,
       "company_name": "Cadbury",
       "product_costperitem": 20,
       "product_manufacturedate": "2022-11-16",
@@ -98,7 +98,7 @@
       "product_type": "Noodles",
       "product_code": "MC34343",
       "product_name": "Maggi Chicken",
-      "product_totalstock": 14,
+      "product_totalstock": 13,
       "company_name": "Maggi",
       "product_costperitem": 40,
       "product_manufacturedate": "2022-08-18",
@@ -110,7 +110,7 @@
       "product_type": "Chips",
       "product_code": "RL2323",
       "product_name": "Red Lays",
-      "product_totalstock": 57,
+      "product_totalstock": 55,
       "company_name": "Lays",
       "product_costperitem": 20,
       "product_manufacturedate": "2022-11-15",
@@ -141,6 +141,18 @@
       "product_expirydate": "2023-03-31",
       "product_description": "strawberry cakes",
       "id": 6
+    },
+    {
+      "product_type": "chocolate",
+      "product_code": "Ch204901",
+      "product_name": "popsicle",
+      "product_totalstock": 44,
+      "company_name": "Cadbury",
+      "product_costperitem": 6,
+      "product_manufacturedate": "2023-01-12",
+      "product_expirydate": "2023-02-23",
+      "product_description": "chocolatesa",
+      "id": 7
     }
   ],
   "order": [
@@ -552,6 +564,93 @@
       "total_amount": 100,
       "order_status": "paid",
       "id": 18
+    },
+    {
+      "order_id": "340",
+      "order_date": "2023-02-08T10:35:46.567Z",
+      "customer_details": {
+        "customer_name": "fhfhf",
+        "customer_mobile": "8797877766"
+      },
+      "orderitems": [
+        {
+          "product_id": 7,
+          "product_name": "popsicle",
+          "product_costperitem": 6,
+          "total_units": 4,
+          "total_cost": 24
+        }
+      ],
+      "total_amount": 24,
+      "order_status": "paid",
+      "id": 19
+    },
+    {
+      "order_id": "351",
+      "order_date": "2023-02-08T10:36:43.881Z",
+      "customer_details": {
+        "customer_name": "drgtdg",
+        "customer_mobile": "7644556633"
+      },
+      "orderitems": [
+        {
+          "product_id": 3,
+          "product_name": "Maggi Chicken",
+          "product_costperitem": 40,
+          "total_units": 1,
+          "total_cost": 40
+        },
+        {
+          "product_id": 5,
+          "product_name": "Fuse",
+          "product_costperitem": 25,
+          "total_units": 2,
+          "total_cost": 50
+        }
+      ],
+      "total_amount": 90,
+      "order_status": "paid",
+      "id": 20
+    },
+    {
+      "order_id": "480",
+      "order_date": "2023-02-08T10:39:15.314Z",
+      "customer_details": {
+        "customer_name": "fhfh",
+        "customer_mobile": "7878787888"
+      },
+      "orderitems": [
+        {
+          "product_id": 2,
+          "product_name": "Dairy Milk",
+          "product_costperitem": 20,
+          "total_units": 2,
+          "total_cost": 40
+        }
+      ],
+      "total_amount": 40,
+      "order_status": "paid",
+      "id": 21
+    },
+    {
+      "order_id": "716",
+      "order_date": "2023-02-08T10:40:07.194Z",
+      "customer_details": {
+        "customer_name": "fdsffvsdfs",
+        "customer_mobile": "7676767644"
+      },
+      "orderitems": [
+        {
+          "product_id": 4,
+          "product_name": "Red Lays",
+          "product_costperitem": 20,
+          "total_units": 2,
+          "total_cost": 40
+        }
+      ],
+      "total_amount": 40,
+      "order_status": "paid",
+      "id": 22
     }
   ],
   "admin": {

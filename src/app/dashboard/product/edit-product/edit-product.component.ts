@@ -23,7 +23,7 @@ export class EditProductComponent implements OnInit {
   today= moment(this.now).format('YYYY-MM-DD');
   expirydate= moment(new Date().setDate(new Date().getDate() + 5)).format('YYYY-MM-DD');
 
-  product_form= new FormGroup({
+  product_form: FormGroup | any= new FormGroup({
     product_type: new FormControl('', Validators.required),
     product_code: new FormControl('', Validators.required),
     product_name: new FormControl('', Validators.required),
@@ -83,8 +83,8 @@ export class EditProductComponent implements OnInit {
       return;
     }
     this.service.update(this.fetched_data.id, this.fetched_data).subscribe((res)=>{
-      console.log(JSON.stringify(res));
-      this.loc.back();
+      
+      this.router.navigate(['dashboard/product-report'])
     })
   }
 

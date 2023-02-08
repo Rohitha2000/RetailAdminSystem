@@ -21,7 +21,7 @@ export class AddCompanyComponent implements OnInit {
     this.getCompanies();
   }
 
-  company_form = new FormGroup({
+  company_form: FormGroup |any = new FormGroup({
     company_name: new FormControl('', Validators.required),
     company_description: new FormControl('', Validators.required)
   })

@@ -14,7 +14,7 @@ import { Location } from '@angular/common';
 export class EditCategoryComponent implements OnInit {
   fetched_data:any;
   id:string;
-update_form!:FormGroup;
+update_form!:FormGroup| any;
   constructor(private service: CategoryService, private route: ActivatedRoute, 
     private router:Router, private fb: FormBuilder ) { }
 
@@ -33,7 +33,7 @@ update_form!:FormGroup;
 
   fetchCategory(){
          this.service.getCategory().
-         subscribe((res)=>{
+         subscribe((res: any[])=>{
            for(let dt of res){
               if( dt.category_id === this.id){
                 
@@ -51,7 +51,7 @@ update_form!:FormGroup;
 
     this.service.update(this.fetched_data.id, this.fetched_data).subscribe((res)=>{
       
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/dashboard/category-report'])
     })
   }
 
