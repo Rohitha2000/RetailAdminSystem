@@ -10,6 +10,7 @@ import { OrderService } from '../service/order.service';
 export class OrderDetailsComponent implements OnInit {
   paramid:any;
   orderdata:any;
+  orderArray:any[];
 
   constructor(private route:ActivatedRoute, private service:OrderService) { }
 
@@ -22,13 +23,15 @@ export class OrderDetailsComponent implements OnInit {
     this.paramid = this.route.snapshot.paramMap.get('orderid');
      this.service.getOrders().subscribe((res)=>{
       for(let ord of res){
-        if(ord.order_id == this.paramid){
+        if( ord && ord.order_id === this.paramid){
           this.orderdata= ord;
           console.log(JSON.stringify(this.orderdata))
         }
       }
     })
+    
   }
+ 
 
 
 

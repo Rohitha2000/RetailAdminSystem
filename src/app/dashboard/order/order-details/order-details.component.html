@@ -12,7 +12,7 @@
     <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
     background-color: rgb(170, 169, 169);"></mat-divider>
     <br>
-    <table >
+    <table *ngIf="orderdata">
         <tr>
             <th>Order ID</th>
             <td>{{orderdata.order_id}}</td>
@@ -38,7 +38,7 @@
     <mat-divider style="border: 0.5px solid rgb(186, 185, 185); 
     background-color: rgb(170, 169, 169);"></mat-divider>
     <br>
-    <table class="table">
+    <table class="table" *ngIf="orderdata">
         <thead>
             <th>Product ID</th>
             <th>Product Name</th>

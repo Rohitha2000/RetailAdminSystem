@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import * as moment from 'moment';
 import { Category } from '../../category/category.model';
@@ -23,7 +23,7 @@ export class AddProductComponent implements OnInit {
   expirydate= moment(new Date().setDate(new Date().getDate() + 5)).format('YYYY-MM-DD');
 
   
-  product_form= new FormGroup({
+  product_form: FormGroup |any= new FormGroup({
     product_type: new FormControl('', Validators.required),
     product_code: new FormControl('', Validators.required),
     product_name: new FormControl('', Validators.required),
@@ -64,13 +64,12 @@ export class AddProductComponent implements OnInit {
   }
 
   saveProduct(){
-    console.log(this.product_form.value);
     this.submitted= true;
     if (this.product_form.invalid) {
       return;
     }
 
-    this.service.addProduct(this.product_form.value as Product).subscribe((res)=>{
+    this.service.addProduct(this.product_form.value).subscribe((res)=>{
         this.router.navigate(['dashboard/product-report'])
     })
 

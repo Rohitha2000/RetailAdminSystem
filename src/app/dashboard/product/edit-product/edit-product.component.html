@@ -4,12 +4,12 @@
     </mat-toolbar>
   </p>
 
-  <div class="container">
+  <div class="container" *ngIf="fetched_data">
     <form action="" [formGroup]= "product_form" (ngSubmit)="updateProduct()">
     <div class="row">
       
         <div class="col-lg-6">
-            <div class="container1">
+            <div class="container1" >
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Select Product Type</label>
                     <select class="form-select form-select-sm mb-3"  

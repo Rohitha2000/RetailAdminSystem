@@ -18,7 +18,7 @@ export class EditCompanyComponent implements OnInit {
   constructor(private service: CompanyService, private route: ActivatedRoute, 
     private router:Router ,private loc: Location) { }
 
-  update_form = new FormGroup({
+  update_form: FormGroup| any = new FormGroup({
     company_name: new FormControl('', Validators.required),
     company_description: new FormControl('', Validators.required)
   })
@@ -50,7 +50,7 @@ export class EditCompanyComponent implements OnInit {
 
     this.service.update(this.fetched_data.id, this.fetched_data).subscribe((res)=>{
       console.log(JSON.stringify(res));
-      this.loc.back();
+      this.router.navigate(['/dashboard/company-report'])
     })
   }
 

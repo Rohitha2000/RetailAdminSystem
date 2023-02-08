@@ -28,7 +28,7 @@ describe('OrderService', () => {
   });
 
   it('get orders API call - getOrders()',()=>{
-    const order= {
+    const order=[ {
       "order_id": 531,
       "order_date": "2023-01-11T07:59:05.405Z",
       "customer_details": {
@@ -54,7 +54,7 @@ describe('OrderService', () => {
       "total_amount": 340,
       "id": 1,
       "order_status": "paid"
-    }
+    }]
 
     service.getOrders().subscribe((res)=>{
       expect(res).toEqual(order);

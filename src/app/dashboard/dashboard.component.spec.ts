@@ -16,13 +16,14 @@ describe('DashboardComponent', () => {
     await TestBed.configureTestingModule({
       imports:[MatMenuModule, HttpClientTestingModule],
       declarations: [ DashboardComponent ],
-      providers:[AdminLoginService]
+      providers:[AdminLoginService, Router]
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     service= TestBed.inject(AdminLoginService)
+    router= TestBed.inject(Router)
     fixture.detectChanges();
   });
   it('should ', () => {
@@ -38,13 +39,17 @@ describe('DashboardComponent', () => {
   it('User Login', () => {
    
     service.setPersona='user'
+   
      component.logincheck();
      expect(component.startSellorBuy_dashboard).toEqual('Start Buy')
    });
+
+   it('logout', ()=>{
+    spyOn(localStorage, 'clear');
+    spyOn(router, 'navigate')
+    component.logout();
+    expect(localStorage.clear).toHaveBeenCalled();
+    expect(router.navigate).toHaveBeenCalledWith(['/'])
+   })
 });
 
-describe("A suite", ()=> {
-  it("contains spec with an expectation", function() {
-      expect(true).toBe(true);
-  });
-})
