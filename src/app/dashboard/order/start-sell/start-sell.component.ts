@@ -30,7 +30,7 @@ export class StartSellComponent implements OnInit {
    customer_button:string;
    save_button:string;
    
-  customer_form= new FormGroup({
+  customer_form: FormGroup | any= new FormGroup({
     customer_name: new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z ]*$"), Validators.maxLength(25), Validators.minLength(3)]),
     customer_mobile: new FormControl(null, [Validators.required,Validators.pattern("^[7-9][0-9]{9}$"),
                                        Validators.minLength(10), Validators.maxLength(10)]),
@@ -60,7 +60,7 @@ export class StartSellComponent implements OnInit {
    
   }
  
-  order_form= new FormGroup({
+  order_form: FormGroup | any= new FormGroup({
     product_name:new FormControl(null, Validators.required),
     quantity: new FormControl(null,[Validators.required])
   })
@@ -207,6 +207,8 @@ export class StartSellComponent implements OnInit {
     }
     this.order_form.reset();
   }
+
+  
 
 
   // delete an item from cart
